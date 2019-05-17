@@ -1,8 +1,10 @@
 
-
+; open skill tap 
 
 $SMtap_box_x  = 360
 $SMtap_box_y =  175
+
+
 Local $arr_Skills_y[6] = [  275, 355,  423, 500, 575, 653 ]
 
 Local $arr_UseSkills[6] = [ $eHS, $eDS, $eHM, $eFS, $eWC, $eSC ];
