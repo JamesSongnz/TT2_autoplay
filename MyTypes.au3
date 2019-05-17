@@ -1,4 +1,7 @@
 
+; This is configuration file
+; you can modify play mode below
+
 
 Global Enum $eSwordM, $eHeroM, $eEquipM
 
