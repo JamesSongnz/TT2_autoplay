@@ -3,13 +3,16 @@
 
 
 
-Opt("MouseCoordMode", 2)
+Opt("MouseCoordMode", 1)
+Opt( "PixelCoordMode", 1)
 
 Global $g_bPaused = False
 Global $g_autoing = False
 
+Global $screen_pairy_x = 200, $screen_pairy_y = 210
 
-#include "Mytypes.au3"
+
+#include "Mytypes_msi.au3"
 #include "libs.au3"
 
 ; Assgins the HotKey to our custom exit function
@@ -24,9 +27,16 @@ HotKeySet("{PAUSE}", "TogglePause")
 
 HotKeySet("{F4}", "testFunction")
 
-Global $screen_pairy_x = 200, $screen_pairy_y = 210
+WinActivate("[CLASS:LDPlayerMainFrame]")
+WinMove("LDPlayer", "", 0,0 )
 
 func testFunction()
+
+	BottomMenuExit()
+	;
+	#cs
+
+
 $g_autoing = True
 	Local $nTimes = 6, $delay = 15
 	For $i = $hero_m_lv_btn1_y To $hero_m_lv_btn4_y Step 45
@@ -36,6 +46,8 @@ $g_autoing = True
 	;MouseClick("left", $hero_m_lv_btn_x, $hero_m_lv_btn2_y, 3, 1)
 	;MouseClick("left", $hero_m_lv_btn_x, $hero_m_lv_btn3_y, 3, 1)
 	Next
+
+	#ce
 EndFunc
 
 

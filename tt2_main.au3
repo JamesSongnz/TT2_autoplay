@@ -3,14 +3,14 @@
 
 
 ; set  option
-Opt("MouseCoordMode", 2)
-Opt( "PixelCoordMode", 2)
+Opt("MouseCoordMode", 0)
+Opt( "PixelCoordMode", 0)
 
 Global $g_bPaused = False
 Global $g_autoing = False
 
 
-#include "Mytypes.au3"
+#include "Mytypes_msi.au3"
 #include "libs_main.au3"
 #include "utils.au3"
 #include "ui_utils.au3"
@@ -56,8 +56,9 @@ HotKeySet("{F4}", "testFunction")
 
 
 ; title : us  , class : Qt5QWindowIcon
-WinActivate("[CLASS:Qt5QWindowIcon]")
-WinMove("nz", "", 0,0 )
+;WinActivate("[CLASS:Qt5QWindowIcon]")
+WinActivate($ClientClass)
+WinMove($Client, "", 0,0 )
 ; us -2,2 , 481, 882)
 ;us win size is /...
 ; default size : , 481, 886 <=  does not work !!!
@@ -68,12 +69,12 @@ WinMove("nz", "", 0,0 )
 ;consolewrite ($hWnd & " Error:" & @error&@TAB&"Checksum is " &  $checksum & @CRLF)
 
 
-Global $screen_pairy_x = 325, $screen_pairy_y = 630
+
 func testFunction()
+	BottomMenuExit()
 
-
-	Local $SCLvCS = PixelChecksum( 144, 953, 167, 968   )
-	ConsoleWrite(" lv 25 " & $SCLvCS )
+;	Local $SCLvCS = PixelChecksum( 144, 953, 167, 968   )
+;	ConsoleWrite(" lv 25 " & $SCLvCS )
 ;~ FairyCollect()
 ;~
 ;~ CheckTapOpen()

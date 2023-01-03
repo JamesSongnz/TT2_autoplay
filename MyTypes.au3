@@ -5,6 +5,10 @@
 
 Global Enum $eSwordM, $eHeroM, $eEquipM
 
+; Client Name
+$Client = "LDPlayer"
+$ClientClass  = "[CLASS:LDPlayerMainFrame]"
+
 
 ; screen coodinate
 $screen_click_x = 258
@@ -39,6 +43,7 @@ $hero_m_lv_btn4_y = 760
 $menu_exit_x = 400
 $menu_exit_y = 470
 
+Global $screen_pairy_x = 325, $screen_pairy_y = 630
 
 ;; Sk Btn Coord
 Global $aSksCoord[6] = [ 22, 100, 180, 260, 340, 420 ]
